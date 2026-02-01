@@ -28,7 +28,7 @@ class PlaylistService {
       ...p,
       songCount: p._count.songs,
       isProtected: !!p.passwordHash,
-      passwordHash: undefined, // Don't expose password hash
+      passwordHash: null, // Don't expose password hash
     })) as (Playlist & { songCount: number; isProtected: boolean })[];
   }
 
@@ -65,7 +65,7 @@ class PlaylistService {
       ...playlist,
       songCount: playlist._count.songs,
       isProtected: !!playlist.passwordHash,
-      passwordHash: undefined,
+      passwordHash: null,
     } as unknown as PlaylistWithSongs;
   }
 
@@ -106,7 +106,7 @@ class PlaylistService {
       ...playlist,
       songCount: playlist._count.songs,
       isProtected: !!playlist.passwordHash,
-      passwordHash: undefined,
+      passwordHash: null,
     } as Playlist & { songCount: number; isProtected: boolean };
   }
 
@@ -151,7 +151,7 @@ class PlaylistService {
       ...playlist,
       songCount: playlist._count.songs,
       isProtected: !!playlist.passwordHash,
-      passwordHash: undefined,
+      passwordHash: null,
     } as Playlist & { songCount: number; isProtected: boolean };
   }
 
