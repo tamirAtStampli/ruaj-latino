@@ -1,9 +1,20 @@
 import { getDriveClient } from '../config/google.js';
 import { env } from '../config/env.js';
 import { prisma } from '../config/database.js';
-import { AUDIO_MIME_TYPES } from '@ruaj-latino/shared';
 import type { GaxiosResponse } from 'gaxios';
 import type { Readable } from 'stream';
+
+const AUDIO_MIME_TYPES = [
+  'audio/mpeg',
+  'audio/mp3',
+  'audio/wav',
+  'audio/ogg',
+  'audio/flac',
+  'audio/aac',
+  'audio/m4a',
+  'audio/x-m4a',
+  'audio/mp4',
+] as const;
 
 export interface DriveFile {
   id: string;
