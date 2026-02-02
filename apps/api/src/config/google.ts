@@ -14,10 +14,13 @@ export const getDriveClient = () => {
     throw new Error('Google Drive credentials not configured');
   }
 
+  // Replace escaped newlines with actual newlines
+  const privateKey = env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n');
+
   const auth = new google.auth.GoogleAuth({
     credentials: {
       client_email: env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      private_key: env.GOOGLE_PRIVATE_KEY,
+      private_key: privateKey,
     },
     scopes: SCOPES,
   });
